@@ -8,10 +8,10 @@
   <div id="messages"></div>
  
  <script>
-    const ws = new WebSocket('wss://webserver-9dcz.onrender.com');  //เชื่อมต่อกับ server
+    const ws = new WebSocket('ws://localhost:8080');  //เชื่อมต่อกับ server
 
     ws.addEventListener('open', () => {  // event เมื่อ websocket เชื่อมต่อได้
-      console.log('Connected to server'); // เชื่อมต่อกับ server ได้ให้แสดงข้อความที่ใส่
+      console.log('Connected to server'); 
     });
 
     ws.addEventListener('message', (event) => { // เมื่อได้รับข้อความจาก server
@@ -22,12 +22,12 @@
       });
     });
 
-    ws.addEventListener('close', () => { //  ถ้าหยุดทำงาน
-      console.log('Disconnected from server'); // แสดงข้อความ
+    ws.addEventListener('close', () => { //  หยุดทำงาน
+      console.log('Disconnected from server'); 
     });
 
-    ws.addEventListener('error', (error) => { // ถ้าเกิด error
-      console.log('WebSocket error:', error); // แสดงข้อความ
+    ws.addEventListener('error', (error) => { // เกิด error
+      console.log('WebSocket error:', error); 
     });
   </script>
 </body>
